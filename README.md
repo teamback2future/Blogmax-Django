@@ -6,7 +6,7 @@
 Full-Featured Blog with Django web framework. 
 
 ### Screenshots
-<img src="https://i.hizliresim.com/3tggkY.png" width="480" height="241"> <img src="https://i.hizliresim.com/aeEe38.png" width="480" height="241"> <img src="https://i.hizliresim.com/ScjgdY.png" width="480" height="241"> <img src="https://i.hizliresim.com/Aa73cx.png" width="480" height="241""> <img src="https://i.hizliresim.com/ygjwfh.png" width="480" height="241"> <img src="https://i.hizliresim.com/7Th7sE.png" width="480" height="241"> <img src="https://i.hizliresim.com/r5oFxc.png" width="480" height="241"> <img src="https://i.hizliresim.com/my0eDT.png" width="480" height="241">
+<img src="https://i.hizliresim.com/3tggkY.png" width="480" height="241"> <img src="https://i.hizliresim.com/aeEe38.png" width="480" height="241"> <img src="https://i.hizliresim.com/ScjgdY.png" width="480" height="241"> <img src="https://i.hizliresim.com/Aa73cx.png" width="480" height="241"> <img src="https://i.hizliresim.com/ygjwfh.png" width="480" height="241"> <img src="https://i.hizliresim.com/7Th7sE.png" width="480" height="241"> <img src="https://i.hizliresim.com/r5oFxc.png" width="480" height="241"> <img src="https://i.hizliresim.com/my0eDT.png" width="480" height="241">
 
 Features 
 =
