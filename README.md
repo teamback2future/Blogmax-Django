@@ -5,11 +5,8 @@
 
 Full-Featured Blog with Django web framework. 
 
-Screenshots
-=
-<img src="screenshots/index.png" width=400><img src=https://i.hizliresim.com/3tggkY.png" width=400>
-<img src="screenshots/profile.png" width=400><img src="screenshots/new_post.png" width=400>
-<img src="screenshots/post.png" width=400><img src="screenshots/delete.png" width=400>
+### Screenshots
+<img src="https://i.hizliresim.com/3tggkY.png" width="156" height="275">    <img src="https://i.hizliresim.com/aeEe38.png" width="156" height="275">    <img src="https://i.hizliresim.com/ScjgdY.png" width="156" height="275">    <img src="https://i.hizliresim.com/Aa73cx.png" width="156" height="275"> <img src="https://i.hizliresim.com/ygjwfh.png" width="156" height="275"> <img src="https://i.hizliresim.com/7Th7sE.png" width="156" height="275"> <img src="https://i.hizliresim.com/r5oFxc.png" width="156" height="275"> <img src="https://i.hizliresim.com/my0eDT.png" width="156" height="275">
 
 Features 
 =
@@ -23,6 +20,7 @@ Features
 - Password Reset
 - Customized admin panel
 - Pagination
+- Contact
 
 How To Use
 =
