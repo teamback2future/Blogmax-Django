@@ -11,7 +11,11 @@
             <small class="text-muted">{{ i.created_date|date:"F d, Y" }}</small>
           </div>
           <h2><a class="article-title" href="{% url 'post-detail' i.id %}">{{ i.title }}</a></h2>
-          <p class="article-content">{{ i.content }}</p>
+          {% if i.post_image %}
+              <img style=" width:600px; height: 300px;" class="img-fluid rounded mb-3" src="{{i.post_image.url}}" alt="">
+            {% endif %}
+          <p class="article-content">{{ i.content|truncatewords:50 }}</p>
+          <a style="float: right;" href="{% url 'post-detail' i.id %}" class="btn btn-info btn-sm mb-2">Read more</a>
         </div>
       </article>
     {% endfor %}
@@ -42,3 +46,10 @@
 
     {% endif %}
     {% endblock content %}
+
+
+
+
+
+
+    

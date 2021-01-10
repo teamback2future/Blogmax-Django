@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404,redirect
-from . models import Post, Comment
+from . models import Post
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin #  login_required for create a new post
 from django.contrib.auth.models import User
@@ -37,13 +37,23 @@ class UserPostListView(ListView):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-created_date')
 
+class CityPostListView(ListView):
+    model = Post
+    template_name = 'blog/city_posts.html' #<app>/<model>_<viewtype>.html --> part of the urls.py
+    context_object_name = 'posts' # posts explained early stage in our list
+    paginate_by=4
+
+    def get_queryset(self):
+        city = get_object_or_404(Post, username=self.kwargs.get('city'))
+        return Post.objects.filter(city=city).order_by('-created_date')
+
 class PostDetailView(DetailView):
     model =  Post
     template_name = 'blog/post_detail.html'
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title','content']
+    fields = ['title','content','post_image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -73,37 +83,4 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-def about(request):
-    return render(request,"blog/about.html")
 
-def contact(request):
-    if request.method == "POST":
-        txtName = request.POST['txtName']
-        txtEmail = request.POST['txtEmail']
-        txtMsg = request.POST['txtMsg']
-        send_mail(
-            txtName,
-            txtMsg,
-            txtEmail,
-            ['muhammetuslu78@gmail.com'],
-        )
-        context = {
-            'txtName':txtName
-        }
-        return render(request,"blog/contact.html",context)
-    else:
-        return render(request,"blog/contact.html",{})
-
-
-def addComment(request,id):
-    post = get_object_or_404(Post,id = id)
-    if request.method == "POST":
-        comment_author = request.user
-        comment_content = request.POST.get("comment_author")
-
-        newComment = Comment(author = comment_author,comment_content=comment_content)
-        newComment.post = post
-
-
-        newComment.save()
-    return redirect("blog:post-detail" +  str(id))

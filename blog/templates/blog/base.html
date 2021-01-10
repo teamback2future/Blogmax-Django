@@ -21,20 +21,11 @@
             <div class="collapse navbar-collapse" id="navbarToggle">
               <div class="navbar-nav mr-auto">
                 <a class="nav-item nav-link" href="/">Home</a>
-                <a class="nav-item nav-link" href="/about">About Me</a>
-                <a class="nav-item nav-link" href="/contact">Contact</a>
+
               </div>
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
-                <form >
-                  {% csrf_token %}
-                  <div class="d-flex justify-content-center h-100">
-                    <div class="searchbar">
-                      <input class="search_input" type="text" name="keyword" placeholder="Search...">
-                      <button  type="submit" class="search_icon btn btn-success"><i class="fas fa-search"></i></button>
-                    </div>
-                  </div>
-                </form>
+                
                 {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'users:profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
@@ -72,10 +63,10 @@
                 {% else %}
                 
                 {% endif %}
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
+                {% for post in posts %}
+                <li class="list-group-item list-group-item-light"><a href="">{{post.city}}</a></li>
+                {% endfor %}
+                
                 </ul>
               </p>
             </div>

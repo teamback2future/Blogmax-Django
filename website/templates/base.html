@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Projenin adı</title>
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'website/css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'website/css/bootstrap.css' %}">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="{% static 'website/css/superfish.css' %}">
+
+	<link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+
+
+	<!-- Modernizr JS -->
+	<script src="static/website/js/modernizr-2.6.2.min.js"></script>
+
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+			<div id="fh5co-page">
+		{% include "navbar.html" %}
+		
+		{% block body %}
+		
+		{% endblock body %}
+
+		{% include "footer.html" %}
+		
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- jQuery -->
+
+
+	<script src="static/website/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="static/website/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="static/website/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="static/website/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar -->
+	<script src="static/website/js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="static/website/js/hoverIntent.js"></script>
+	<script src="static/website/js/superfish.js"></script>
+
+	<!-- Google Map -->
+	<script src="static/website/https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="static/website/js/google_map.js"></script>
+
+	<!-- Main JS -->
+	<script src="static/website/js/main.js"></script>
+
+	</body>
+</html>
+
