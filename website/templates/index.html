@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                <a class="fh5co-listing-item">
+                <a class="fh5co-listing-item" href="http://127.0.0.1:8000/category/paris">
                     <img style="height: 300px; width : 600px;" src="static/website/images/img-1.jpg"  class="img-responsive">
                     <div class="fh5co-listing-copy">
                         <h2>Paris</h2>
@@ -16,7 +16,7 @@
                 </a>
             </div>
             <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                <a class="fh5co-listing-item">
+                <a class="fh5co-listing-item" href="http://127.0.0.1:8000/category/NYC">
                     <img style="height: 300px; width : 600px;" src="static/website/images/img-2.jpg"  class="img-responsive">
                     <div class="fh5co-listing-copy">
                         <h2>New York</h2>
@@ -27,7 +27,7 @@
                 </a>
             </div>
             <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                <a class="fh5co-listing-item">
+                <a class="fh5co-listing-item" href="http://127.0.0.1:8000/category/london">
                     <img style="height: 300px; width : 600px;" src="static/website/images/img-3.jpg" class="img-responsive">
                     <div class="fh5co-listing-copy">
                         <h2>London</h2>
@@ -40,7 +40,7 @@
             <!-- END 3 row -->
 
             <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                <a class="fh5co-listing-item">
+                <a class="fh5co-listing-item" href="http://127.0.0.1:8000/category/Amsterdam">
                     <img style="height: 300px; width : 600px;" src="static/website/images/img-4.jpg" class="img-responsive">
                     <div class="fh5co-listing-copy">
                         <h2>Amsterdam</h2>
@@ -51,10 +51,10 @@
                 </a>
             </div>
             <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                <a class="fh5co-listing-item">
+                <a class="fh5co-listing-item" href="http://127.0.0.1:8000/category/vienna">
                     <img style="height: 300px; width : 600px;" src="static/website/images/img-5.jpg" class="img-responsive">
                     <div class="fh5co-listing-copy">
-                        <h2>Viyana</h2>
+                        <h2>Vienna</h2>
                         <span class="icon">
                             <i class="icon-chevron-right"></i>
                         </span>
@@ -62,7 +62,7 @@
                 </a>
             </div>
             <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                <a class="fh5co-listing-item">
+                <a class="fh5co-listing-item" href="http://127.0.0.1:8000/category/istanbul">
                     <img style="height: 300px; width : 600px;" src="static/website/images/img-6.jpg" class="img-responsive">
                     <div class="fh5co-listing-copy">
                         <h2>İstanbul</h2>
@@ -78,39 +78,27 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 fh5co-news">
-						<h3>News</h3>
+						<h3>Recent Articles</h3>
 						<ul>
-							<li>
-								<a href="#">
-									<span class="fh5co-date">Sep. 10, 2016</span>
-									<h3>Newly done Bridge of London</h3>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit!</p>
+                            {% for i in news %}
+                            <li>
+								<a href="/article/{{i.id}}">
+									<span class="fh5co-date">{{i.created_date}}</span>
+									<h3>{{i.title}}</h3>
+									<p>{{i.content|truncatewords:30}}</p>
 								</a>
 							</li>
-							<li>
-								<a href="#">
-									<span class="fh5co-date">Sep. 10, 2016</span>
-									<h3>Newly done Bridge of London</h3>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit!</p>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="fh5co-date">Sep. 10, 2016</span>
-									<h3>Newly done Bridge of London</h3>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit!</p>
-								</a>
-							</li>
+                            {% endfor %}	
 						</ul>
 					</div>
 					<div class="col-md-6 fh5co-testimonial">
 						<img style="width: 600px;" src="static/website/images/pic1.jpg" class="img-responsive mb20">
-						<img style="height: 400px;" src="static/website/images/pic2.jpg"class="img-responsive">
+						<img style="width:600px;" src="static/website/images/pic2.jpg"class="img-responsive">
 					</div>
 				</div>
 			</div>
 		</div>
-		
+   
 		
 	</div>
 

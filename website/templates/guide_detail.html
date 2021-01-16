@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Travelly</title>
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'website/css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'website/css/bootstrap.css' %}">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="{% static 'website/css/superfish.css' %}">
+
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+     <!-- Plotly -->
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+	<!-- Modernizr JS -->
+	<script src="static/website/js/modernizr-2.6.2.min.js"></script>
+
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+			<div id="fh5co-page">
+                <div id="fh5co-header">
+                    <header id="fh5co-header-section">
+                        <div class="container">
+                            <div class="nav-header">
+                                <a href="#" class="static/website/js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+                                <h1 id="fh5co-logo"><a href="{% url 'website-home' %}">Travelly</a></h1>
+                                <!-- START #fh5co-menu-wrap -->
+                                <nav id="fh5co-menu-wrap" role="navigation">
+                                    <ul class="sf-menu" id="fh5co-primary-menu">
+                                        <li class="active">
+                                            <a href="{% url 'website-home' %}">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'website-guide' %}" class="fh5co-sub-ddown">Guide</a>
+                                            
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'blog-home' %}" class="fh5co-sub-ddown">Blog</a>
+                                        </li>
+                                        <li><a href="{% url 'website-about' %}">About</a></li>
+                                        <li><a href="{% url 'website-contact' %}">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                
+                
+                <div style="height: 2500px;" class="fh5co-hero">
+                    <div class="fh5co-overlay"></div>
+                    <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(static/website/images/cover_bg_1.jpg);">
+                        <div class="desc animate-box">
+
+                            <div class="fh5co-listing">
+                                <main role="main" class="container">
+                                    <div class="row">
+                                      <div class="col-md-8">
+                                        
+                                          <h2 class="article-title">{{ article.title }}</h2>
+                                          <small class="text-muted">{{ article.created_date|date:"F d, Y" }}</small>
+                                          <hr>
+                                          {% if article.article_image %}
+                                        <img style="width: 750px;  margin-bottom:20px"  class="mb-5" src="{{article.article_image.url}}" alt="">
+                                
+                                      {% endif %}
+                                          <p class="article-content">{{ article.content }}</p>
+                                          <br>
+                                          <p>Do you want to know the current <a style="color: brown;" href="{% url 'website-plot' %}">Covid-19 risk</a>  in popular tourist cities?</p>   
+                                          
+                                      </div>
+                                      <div style="margin-top: 120px;" class="col-md-4">
+                                        <div class="bg-dark">
+                                          <h3 style="margin-left: 30px; color:cornsilk" class='class="article-title"'>Categories</h3>
+                                          <p style="margin-left: 30px;" class='text-light'>You can view the city where you want.</p>
+                                            <ul class="bg-dark">
+                                                {% for i in city %}
+                                                <li style="background-color: black;" class="list-group-item list-group-item-danger"><a href="http://127.0.0.1:8000/category/{{i.name}}">{{i.name}}</a></li>
+                                                {% endfor %}
+                                            
+                                            
+                                            </ul> 
+                                        </div>
+                                      </div>
+                                    </div>
+                                </main>         
+                            </div>     
+                        </div>
+                    </div>
+                </div>		
+            
+                
+                            <!-- END 3 row -->	
+
+		<footer>
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 text-center">
+                            <p class="fh5co-social-icons">
+                                <a href="#"><i class="icon-twitter2"></i></a>
+                                <a href="#"><i class="icon-facebook2"></i></a>
+                                <a href="#"><i class="icon-instagram"></i></a>
+                                <a href="#"><i class="icon-dribbble2"></i></a>
+                                <a href="#"><i class="icon-youtube"></i></a>
+                            </p>
+                            <p>Copyright 2021 Back2Future <a href="#">Travelly</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="#" target="_blank">Back2Future</a> / Demo Images: <a href="#" target="_blank">Unsplash</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+		
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- jQuery -->
+
+
+	<script src="static/website/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="static/website/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="static/website/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="static/website/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar -->
+	<script src="static/website/js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="static/website/js/hoverIntent.js"></script>
+	<script src="static/website/js/superfish.js"></script>
+
+	<!-- Google Map -->
+	<script src="static/website/https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="static/website/js/google_map.js"></script>
+
+	<!-- Main JS -->
+    <script src="static/website/js/main.js"></script>
+   
+
+	</body>
+</html>

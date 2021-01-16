@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="nav-header">
                     <a href="#" class="static/website/js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-                    <h1 id="fh5co-logo"><a href="{% url 'website-home' %}">Listing</a></h1>
+                    <h1 id="fh5co-logo"><a href="{% url 'website-home' %}">Travelly</a></h1>
                     <!-- START #fh5co-menu-wrap -->
                     <nav id="fh5co-menu-wrap" role="navigation">
                         <ul class="sf-menu" id="fh5co-primary-menu">
@@ -12,7 +12,7 @@
                                 <a href="{% url 'website-home' %}">Home</a>
                             </li>
                             <li>
-                                <a href="listing.html" class="fh5co-sub-ddown">Guide</a>
+                                <a href="{% url 'website-guide' %}" class="fh5co-sub-ddown">Guide</a>
                                 
                             </li>
                             <li>
@@ -34,7 +34,7 @@
             <div class="desc animate-box">
                 <h2>Travel Around The World.</h2>
                 <!-- <span>Lovely Crafted by <a href="#" target="_blank" class="fh5co-site-name">Back2Future</a></span> -->
-                <span><a class="btn btn-primary btn-lg" href="#">Get Started</a></span>
+                <span><a class="btn btn-primary btn-lg" href="{% url 'website-guide' %}">Get Started</a></span>
             </div>
         </div>
 

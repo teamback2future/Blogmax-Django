@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Travelly</title>
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'website/css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'website/css/bootstrap.css' %}">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="{% static 'website/css/superfish.css' %}">
+
+	<link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+
+
+	<!-- Modernizr JS -->
+	<script src="static/website/js/modernizr-2.6.2.min.js"></script>
+
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+			<div id="fh5co-page">
+                <div id="fh5co-header">
+                    <header id="fh5co-header-section">
+                        <div class="container">
+                            <div class="nav-header">
+                                <a href="#" class="static/website/js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+                                <h1 id="fh5co-logo"><a href="{% url 'website-home' %}">Travelly</a></h1>
+                                <!-- START #fh5co-menu-wrap -->
+                                <nav id="fh5co-menu-wrap" role="navigation">
+                                    <ul class="sf-menu" id="fh5co-primary-menu">
+                                        <li class="active">
+                                            <a href="{% url 'website-home' %}">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'website-guide' %}" class="fh5co-sub-ddown">Guide</a>
+                                            
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'blog-home' %}" class="fh5co-sub-ddown">Blog</a>
+                                        </li>
+                                        <li><a href="{% url 'website-about' %}">About</a></li>
+                                        <li><a href="{% url 'website-contact' %}">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                
+                
+                <div style="height: 4250px;" class="fh5co-hero">
+                    <div class="fh5co-overlay"></div>
+                    <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(static/website/images/cover_bg_1.jpg);">
+                        <div class="desc animate-box">
+
+                            <div class="fh5co-listing">
+                                <div class="container">
+                                    <div class="row">
+                                        {% for i in article %}
+                                        <div class="col-md-4 col-sm-4 fh5co-item-wrap">
+                                            <a class="fh5co-listing-item" href="/article/{{i.id}}">
+                                                {% if i.article_image %}
+                                                    <img style="height: 300px; width : 600px;" class="img-responsive" src="{{i.article_image.url}}">
+                                                {% endif %}
+                                                <div class="fh5co-listing-copy">
+                                                    <h2>{{i.title}}</h2>
+                                                    <span class="icon">
+                                                        <i class="icon-chevron-right"></i>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                     {% endfor %}
+                                    </div>   
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+            
+                </div>			
+
+    {% include "footer.html" %}
+		
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- jQuery -->
+
+
+	<script src="static/website/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="static/website/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="static/website/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="static/website/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar -->
+	<script src="static/website/js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="static/website/js/hoverIntent.js"></script>
+	<script src="static/website/js/superfish.js"></script>
+
+	<!-- Google Map -->
+	<script src="static/website/https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="static/website/js/google_map.js"></script>
+
+	<!-- Main JS -->
+	<script src="static/website/js/main.js"></script>
+
+	</body>
+</html>
