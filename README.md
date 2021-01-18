@@ -1,5 +1,5 @@
 ## Taht Travelly
-<img src="https://i.imgur.com/waFabb1.jpg" width="1600" height="1000">
+<img src="https://i.imgur.com/waFabb1.jpg" width="1600" height="800">
 
 
 ## Back2Future Team
